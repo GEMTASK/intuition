@@ -17,3 +17,4 @@ export { default as Chip } from './chip';
 export { default as Tabs } from './tabs';
 export { default as Markdown } from './markdown';
 export { default as Page } from './page';
+export { default as Modal } from './modal';

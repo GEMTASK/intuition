@@ -22,3 +22,4 @@ export { Chip } from "./components";
 export { Tabs } from "./components";
 export { Markdown } from "./components";
 export { Page } from "./components";
+export { Modal } from "./components";
