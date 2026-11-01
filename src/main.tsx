@@ -1,5 +1,8 @@
 import "./index.css";
 
+export type { Delegate } from "./types/Delegate";
+export type { FieldValue } from "./types/FieldValue";
+
 export { View } from "./components";
 export { Text } from "./components";
 export { Icon } from "./components";
@@ -18,6 +21,4 @@ export { Avatar } from "./components";
 export { Chip } from "./components";
 export { Tabs } from "./components";
 export { Markdown } from "./components";
-
-export type { Delegate } from "./types/Delegate";
-export type { FieldValue } from "./types/FieldValue";
+export { Page } from "./components";
