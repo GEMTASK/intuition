@@ -7882,4 +7882,80 @@ function Ns() {
 		})
 	}), e[1] = t, e[2] = i), i;
 }
-export { Fe as Avatar, le as Button, Ee as Checkbox, ze as Chip, he as Divider, Me as Form, G as Icon, fe as Input, Ne as Label, _e as List, Ns as Markdown, Ce as Menu, ye as Popover, Oe as Select, Ve as Tabs, U as Text, me as Toggle, B as View };
+// src/components/page/Page.tsx
+function Ps(e) {
+	let t = (0, D.c)(12), n, r, i, a;
+	t[0] === e ? (n = t[1], r = t[2], i = t[3], a = t[4]) : ({title: a, actions: n, children: r, ...i} = e, t[0] = e, t[1] = n, t[2] = r, t[3] = i, t[4] = a);
+	let o;
+	t[5] !== n || t[6] !== a ? (o = a && /* @__PURE__ */ (0, z.jsxs)(B, {
+		horizontal: !0,
+		align: "top justify",
+		children: [/* @__PURE__ */ (0, z.jsx)(B, {
+			spacing: "8px",
+			children: /* @__PURE__ */ (0, z.jsx)(U, {
+				as: "h1",
+				fontSize: "24px",
+				fontWeight: "400",
+				children: a
+			})
+		}), /* @__PURE__ */ (0, z.jsx)(B, {
+			horizontal: !0,
+			spacing: "8px",
+			style: {
+				marginTop: 8,
+				marginBottom: -8
+			},
+			children: n?.map(Fs)
+		})]
+	}), t[5] = n, t[6] = a, t[7] = o) : o = t[7];
+	let s;
+	return t[8] !== r || t[9] !== i || t[10] !== o ? (s = /* @__PURE__ */ (0, z.jsxs)(B, {
+		negativeBorder: !0,
+		border: "bottom",
+		padding: "8px 16px",
+		spacing: "16px",
+		fillColor: "panel",
+		zIndex: 3,
+		...i,
+		children: [o, r]
+	}), t[8] = r, t[9] = i, t[10] = o, t[11] = s) : s = t[11], s;
+}
+function Fs(e, n) {
+	return t.cloneElement(e, { key: n });
+}
+function Is(e) {
+	let t = (0, D.c)(10), n, r, i;
+	t[0] === e ? (n = t[1], r = t[2], i = t[3]) : ({children: n, style: i, ...r} = e, t[0] = e, t[1] = n, t[2] = r, t[3] = i);
+	let a;
+	t[4] === i ? a = t[5] : (a = {
+		overflowY: "auto",
+		minWidth: 0,
+		minHeight: 0,
+		...i
+	}, t[4] = i, t[5] = a);
+	let o;
+	return t[6] !== n || t[7] !== r || t[8] !== a ? (o = /* @__PURE__ */ (0, z.jsx)(B, {
+		flex: !0,
+		style: a,
+		...r,
+		children: n
+	}), t[6] = n, t[7] = r, t[8] = a, t[9] = o) : o = t[9], o;
+}
+function Ls(e) {
+	let t = (0, D.c)(10), n, r, i;
+	t[0] === e ? (n = t[1], r = t[2], i = t[3]) : ({style: i, children: n, ...r} = e, t[0] = e, t[1] = n, t[2] = r, t[3] = i);
+	let a;
+	t[4] === i ? a = t[5] : (a = {
+		minWidth: 0,
+		minHeight: 0,
+		...i
+	}, t[4] = i, t[5] = a);
+	let o;
+	return t[6] !== n || t[7] !== r || t[8] !== a ? (o = /* @__PURE__ */ (0, z.jsx)(B, {
+		style: a,
+		...r,
+		children: n
+	}), t[6] = n, t[7] = r, t[8] = a, t[9] = o) : o = t[9], o;
+}
+Ls.Header = Ps, Ls.Content = Is;
+export { Fe as Avatar, le as Button, Ee as Checkbox, ze as Chip, he as Divider, Me as Form, G as Icon, fe as Input, Ne as Label, _e as List, Ns as Markdown, Ce as Menu, Ls as Page, ye as Popover, Oe as Select, Ve as Tabs, U as Text, me as Toggle, B as View };
