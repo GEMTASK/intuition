@@ -1,3 +1,5 @@
+import React, { useContext } from "react";
+
 import { View } from "..";
 
 import type { Color } from "../../types/Color";
@@ -6,7 +8,6 @@ import styles from "./Text.module.css";
 import fontSizeStyles from "../../styles/fontSize.module.scss";
 import fontWeightStyles from "../../styles/fontWeight.module.scss";
 import textColorStyles from "../../styles/textColor.module.scss";
-import React, { useContext } from "react";
 
 type TextContext = {
   textParent: boolean,
