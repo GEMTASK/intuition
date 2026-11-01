@@ -16,3 +16,4 @@ export { default as Avatar } from "./avatar";
 export { default as Chip } from "./chip";
 export { default as Tabs } from "./tabs";
 export { default as Markdown } from "./markdown";
+export { default as Page } from "./page";
