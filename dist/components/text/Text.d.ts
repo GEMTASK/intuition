@@ -1,6 +1,6 @@
+import { default as React } from 'react';
 import { View } from '..';
 import { Color } from '../../types/Color';
-import { default as React } from 'react';
 declare function Text<TDelegate extends React.ElementType = "div">({ as, light, caps, bold, select, ellipsis, noWrap, fontSize, fontWeight, textColor, highlight, innerStyle, children, ...props }: {
     as?: TDelegate;
     light?: boolean;
