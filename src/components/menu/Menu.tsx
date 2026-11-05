@@ -41,7 +41,9 @@ function MenuItem({
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
     onClick?.(event);
 
-    onSelect?.(value);
+    if (!event.isPropagationStopped()) {
+      onSelect?.(value);
+    }
   };
 
   return (
