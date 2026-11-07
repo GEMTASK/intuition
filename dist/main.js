@@ -1514,7 +1514,7 @@ function we(e) {
 	t[0] === e ? (n = t[1], r = t[2], i = t[3], a = t[4], o = t[5], s = t[6], c = t[7]) : ({title: s, value: c, style: o, children: n, onClick: r, onSelect: i, ...a} = e, t[0] = e, t[1] = n, t[2] = r, t[3] = i, t[4] = a, t[5] = o, t[6] = s, t[7] = c);
 	let l;
 	t[8] !== r || t[9] !== i || t[10] !== c ? (l = (e) => {
-		r?.(e), i?.(c);
+		r?.(e), e.isPropagationStopped() || i?.(c);
 	}, t[8] = r, t[9] = i, t[10] = c, t[11] = l) : l = t[11];
 	let u = l, d;
 	t[12] === o ? d = t[13] : (d = {
