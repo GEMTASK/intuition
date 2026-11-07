@@ -1625,6 +1625,7 @@ function Oe(e) {
 		as: "input",
 		type: "checkbox",
 		checked: l,
+		className: De.Checkbox,
 		onChange: p,
 		...o
 	}), t[11] = p, t[12] = o, t[13] = l, t[14] = g) : g = t[14];

@@ -31,8 +31,23 @@ function Checkbox({
 
   const checkboxElement = (
     <View ref={ref} horizontal opacityOnPress spacing="8px" align="middle left" onClick={onClick}>
-      <View border={!value} borderColor="gray-4" fillColor={checkboxFillColor} cornerRadius="2px" align="middle center" className={styles.Checkbox}>
-        <View absolute as="input" type="checkbox" checked={value} onChange={handleChange} {...props} />
+      <View
+        border={!value}
+        borderColor="gray-4"
+        fillColor={checkboxFillColor}
+        cornerRadius="2px"
+        align="middle center"
+        className={styles.Checkbox}
+      >
+        <View
+          absolute
+          as="input"
+          type="checkbox"
+          checked={value}
+          className={styles.Checkbox}
+          onChange={handleChange}
+          {...props}
+        />
         {value && (
           <Icon icon={icon ?? CheckIcon} size={20} color="white" />
         )}
