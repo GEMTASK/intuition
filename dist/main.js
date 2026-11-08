@@ -797,9 +797,10 @@ function V(e) {
 	t[31] === Symbol.for("react.memo_cache_sentinel") ? (ue = () => oe.current, t[31] = ue) : ue = t[31], s(T, ue);
 	let de, fe;
 	t[32] !== ae || t[33] !== ie ? (de = () => {
+		let e = oe.current?.closest("#window")?.querySelector("#overlay");
 		if (ae && oe.current && se.current) {
-			let e = oe.current.getBoundingClientRect(), t = se.current.getBoundingClientRect();
-			ie === "top" ? (se.current.style.left = `${e.left - (t.width - e.width) / 2}px`, se.current.style.top = `${e.top - t.height - 8}px`) : ie === "right" && (se.current.style.left = `${e.right + 8}px`, se.current.style.top = `${e.top - (t.height - e.height) / 2}px`);
+			let t = oe.current.getBoundingClientRect(), n = se.current.getBoundingClientRect(), r = e.getBoundingClientRect();
+			ie === "top" ? (se.current.style.left = `${t.left - (n.width - t.width) / 2 - r.left}px`, se.current.style.top = `${t.top - n.height - 8}px`) : ie === "right" && (se.current.style.left = `${t.right + 8 - r.left}px`, se.current.style.top = `${t.top - (n.height - t.height) / 2}px`);
 		}
 	}, fe = [ae, ie], t[32] = ae, t[33] = ie, t[34] = de, t[35] = fe) : (de = t[34], fe = t[35]), c(de, fe);
 	let pe = i ?? "div", me = y && k.flex, he = ne && k.wrap, ge = n && k.absolute, _e = R && k.sticky, ve = S && k.opacityOnPress, ye = re && k[`zindex_${re}`], be = b && k.horizontal, xe = E === "heavy" ? k.heavyShadow : E && k.shadow, Se = _ && k[_], Ce = C && j[`_${C.replace(/ /, "_")}`], we = D && M[`_${D.replace(/ /, "_")}`], Te = o && N[o === !0 ? "top_right_bottom_left" : o.replace(/ /, "_")], Ee = p && k.borderOnFocus, De = x && N.negative, Oe = r && (b ? F[r.replace(/ /, "_")] : I[r.replace(/ /, "_")]), ke = v && A[v], Ae = g && P[`_${g}`], je = f && L[f], Me;

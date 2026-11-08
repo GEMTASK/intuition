@@ -84,25 +84,32 @@ function View<TDelegate extends React.ElementType = "div">({
   const { parentFillColor } = useContext(ViewContext);
 
   const handlePointerEnter = () => {
-    if (tooltip) setIstooltipVisible(true);
+    if (tooltip) {
+      setIstooltipVisible(true);
+    }
   };
 
   const handlePointerLeave = () => {
-    if (tooltip) setIstooltipVisible(false);
+    if (tooltip) {
+      setIstooltipVisible(false);
+    }
   };
 
   useImperativeHandle(ref, () => viewElementRef.current);
 
   useLayoutEffect(() => {
+    const overlayElement = viewElementRef.current?.closest("#window")?.querySelector("#overlay") as HTMLElement;
+
     if (isTooltipVisible && viewElementRef.current && tooltipElementRef.current) {
       const viewClientRect = viewElementRef.current.getBoundingClientRect();
       const tooltipClientRect = tooltipElementRef.current.getBoundingClientRect();
+      const overlayClientRect = overlayElement.getBoundingClientRect();
 
       if (tooltipAnchor === "top") {
-        tooltipElementRef.current.style.left = `${viewClientRect.left - (tooltipClientRect.width - viewClientRect.width) / 2}px`;
+        tooltipElementRef.current.style.left = `${viewClientRect.left - (tooltipClientRect.width - viewClientRect.width) / 2 - overlayClientRect.left}px`;
         tooltipElementRef.current.style.top = `${viewClientRect.top - tooltipClientRect.height - 8}px`;
       } else if (tooltipAnchor === "right") {
-        tooltipElementRef.current.style.left = `${viewClientRect.right + 8}px`;
+        tooltipElementRef.current.style.left = `${viewClientRect.right + 8 - overlayClientRect.left}px`;
         tooltipElementRef.current.style.top = `${viewClientRect.top - (tooltipClientRect.height - viewClientRect.height) / 2}px`;
       }
     }
