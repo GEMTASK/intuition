@@ -1815,10 +1815,10 @@ function Pe(e) {
 Pe.Field = Ne;
 // src/components/label/Label.tsx
 function Fe(e) {
-	let t = (0, O.c)(31), n, r, i, a, o, s, c, l, u, d;
-	t[0] === e ? (n = t[1], r = t[2], i = t[3], a = t[4], o = t[5], s = t[6], c = t[7], l = t[8], u = t[9], d = t[10]) : ({flex: i, label: s, chevron: n, flipped: a, hidden: o, children: r, style: d, onPointerDown: l, onClick: c, ...u} = e, t[0] = e, t[1] = n, t[2] = r, t[3] = i, t[4] = a, t[5] = o, t[6] = s, t[7] = c, t[8] = l, t[9] = u, t[10] = d);
-	let f;
-	t[11] !== n || t[12] !== a || t[13] !== s ? (f = s && /* @__PURE__ */ (0, B.jsxs)(V, {
+	let t = (0, O.c)(33), n, r, i, a, o, s, c, l, u, d, f;
+	t[0] === e ? (n = t[1], r = t[2], i = t[3], a = t[4], o = t[5], s = t[6], c = t[7], l = t[8], u = t[9], d = t[10], f = t[11]) : ({flex: i, label: s, labelProps: c, chevron: n, flipped: a, hidden: o, children: r, style: f, onPointerDown: u, onClick: l, ...d} = e, t[0] = e, t[1] = n, t[2] = r, t[3] = i, t[4] = a, t[5] = o, t[6] = s, t[7] = c, t[8] = l, t[9] = u, t[10] = d, t[11] = f);
+	let m;
+	t[12] !== n || t[13] !== a || t[14] !== s || t[15] !== c ? (m = s && /* @__PURE__ */ (0, B.jsxs)(V, {
 		horizontal: !0,
 		spacing: "4px",
 		align: "middle left",
@@ -1827,10 +1827,12 @@ function Fe(e) {
 			light: !0,
 			caps: !0,
 			noWrap: !0,
+			fontSize: "12px",
 			innerStyle: {
 				fontSize: 11,
 				lineHeight: "17px"
 			},
+			...c,
 			children: s
 		}), n && /* @__PURE__ */ (0, B.jsx)(G, {
 			icon: p,
@@ -1841,30 +1843,30 @@ function Fe(e) {
 				strokeWidth: 1
 			}
 		})]
-	}), t[11] = n, t[12] = a, t[13] = s, t[14] = f) : f = t[14];
-	let m = a ? "row-reverse" : void 0, h;
-	t[15] !== d || t[16] !== m ? (h = {
-		...d,
-		flexDirection: m
-	}, t[15] = d, t[16] = m, t[17] = h) : h = t[17];
-	let g;
-	t[18] !== r || t[19] !== u || t[20] !== h ? (g = /* @__PURE__ */ (0, B.jsx)(V, {
-		flex: !0,
-		...u,
-		style: h,
-		children: r
-	}), t[18] = r, t[19] = u, t[20] = h, t[21] = g) : g = t[21];
+	}), t[12] = n, t[13] = a, t[14] = s, t[15] = c, t[16] = m) : m = t[16];
+	let h = a ? "row-reverse" : void 0, g;
+	t[17] !== f || t[18] !== h ? (g = {
+		...f,
+		flexDirection: h
+	}, t[17] = f, t[18] = h, t[19] = g) : g = t[19];
 	let _;
-	return t[22] !== i || t[23] !== o || t[24] !== c || t[25] !== l || t[26] !== u.cursor || t[27] !== u.opacityOnPress || t[28] !== f || t[29] !== g ? (_ = /* @__PURE__ */ (0, B.jsxs)(V, {
+	t[20] !== r || t[21] !== d || t[22] !== g ? (_ = /* @__PURE__ */ (0, B.jsx)(V, {
+		flex: !0,
+		...d,
+		style: g,
+		children: r
+	}), t[20] = r, t[21] = d, t[22] = g, t[23] = _) : _ = t[23];
+	let v;
+	return t[24] !== i || t[25] !== o || t[26] !== l || t[27] !== u || t[28] !== d.cursor || t[29] !== d.opacityOnPress || t[30] !== m || t[31] !== _ ? (v = /* @__PURE__ */ (0, B.jsxs)(V, {
 		flex: i,
 		spacing: "8px",
-		cursor: u.cursor,
+		cursor: d.cursor,
 		hidden: o,
-		opacityOnPress: u.opacityOnPress,
-		onPointerDown: l,
-		onClick: c,
-		children: [f, g]
-	}), t[22] = i, t[23] = o, t[24] = c, t[25] = l, t[26] = u.cursor, t[27] = u.opacityOnPress, t[28] = f, t[29] = g, t[30] = _) : _ = t[30], _;
+		opacityOnPress: d.opacityOnPress,
+		onPointerDown: u,
+		onClick: l,
+		children: [m, _]
+	}), t[24] = i, t[25] = o, t[26] = l, t[27] = u, t[28] = d.cursor, t[29] = d.opacityOnPress, t[30] = m, t[31] = _, t[32] = v) : v = t[32], v;
 }
 var Ie = {
 	Image: "_onyx-ui_Image_FmDOS",
