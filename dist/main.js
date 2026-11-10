@@ -1770,22 +1770,24 @@ function Ae({ label: e, value: t, options: n = [], multiple: r, flipped: i, fall
 function je() {}
 var Me = r({
 	fields: {},
+	placeholders: {},
 	onFieldChange: () => void 0
 });
 function Ne(e) {
-	let n = (0, O.c)(8), { name: r, children: i } = e, { fields: o, onFieldChange: s } = a(Me), c;
-	n[0] !== r || n[1] !== s ? (c = (e) => {
-		s(r, e);
-	}, n[0] = r, n[1] = s, n[2] = c) : c = n[2];
-	let l = c, u;
-	if (n[3] !== i || n[4] !== o || n[5] !== l || n[6] !== r) {
+	let n = (0, O.c)(9), { name: r, children: i } = e, { fields: o, placeholders: s, onFieldChange: c } = a(Me), l;
+	n[0] !== r || n[1] !== c ? (l = (e) => {
+		c(r, e);
+	}, n[0] = r, n[1] = c, n[2] = l) : l = n[2];
+	let u = l, d;
+	if (n[3] !== i || n[4] !== o || n[5] !== u || n[6] !== r || n[7] !== s) {
 		let e = t.Children.only(i);
-		u = t.isValidElement(e) && t.cloneElement(e, {
+		d = t.isValidElement(e) && t.cloneElement(e, {
 			value: o[r],
-			onValueChange: l
-		}), n[3] = i, n[4] = o, n[5] = l, n[6] = r, n[7] = u;
-	} else u = n[7];
-	return u;
+			placeholder: s?.[r],
+			onValueChange: u
+		}), n[3] = i, n[4] = o, n[5] = u, n[6] = r, n[7] = s, n[8] = d;
+	} else d = n[8];
+	return d;
 }
 Ne.withComponent = (e) => ({ name: t, ...n }) => /* @__PURE__ */ (0, B.jsx)(Pe.Field, {
 	name: t,
@@ -1795,24 +1797,25 @@ Ne.withComponent = (e) => ({ name: t, ...n }) => /* @__PURE__ */ (0, B.jsx)(Pe.F
 	})
 });
 function Pe(e) {
-	let t = (0, O.c)(14), n, r, i, a;
-	t[0] === e ? (n = t[1], r = t[2], i = t[3], a = t[4]) : ({fields: r, children: n, onFieldChange: a, ...i} = e, t[0] = e, t[1] = n, t[2] = r, t[3] = i, t[4] = a);
-	let o = a === void 0 ? je : a, s;
-	t[5] !== r || t[6] !== o ? (s = {
+	let t = (0, O.c)(16), n, r, i, a, o;
+	t[0] === e ? (n = t[1], r = t[2], i = t[3], a = t[4], o = t[5]) : ({fields: r, children: n, placeholders: i, onFieldChange: o, ...a} = e, t[0] = e, t[1] = n, t[2] = r, t[3] = i, t[4] = a, t[5] = o);
+	let s = o === void 0 ? je : o, c;
+	t[6] !== r || t[7] !== s || t[8] !== i ? (c = {
 		fields: r,
-		onFieldChange: o
-	}, t[5] = r, t[6] = o, t[7] = s) : s = t[7];
-	let c = s, l;
-	t[8] !== n || t[9] !== i ? (l = /* @__PURE__ */ (0, B.jsx)(V, {
+		placeholders: i,
+		onFieldChange: s
+	}, t[6] = r, t[7] = s, t[8] = i, t[9] = c) : c = t[9];
+	let l = c, u;
+	t[10] !== n || t[11] !== a ? (u = /* @__PURE__ */ (0, B.jsx)(V, {
 		as: "form",
-		...i,
+		...a,
 		children: n
-	}), t[8] = n, t[9] = i, t[10] = l) : l = t[10];
-	let u;
-	return t[11] !== c || t[12] !== l ? (u = /* @__PURE__ */ (0, B.jsx)(Me, {
-		value: c,
-		children: l
-	}), t[11] = c, t[12] = l, t[13] = u) : u = t[13], u;
+	}), t[10] = n, t[11] = a, t[12] = u) : u = t[12];
+	let d;
+	return t[13] !== l || t[14] !== u ? (d = /* @__PURE__ */ (0, B.jsx)(Me, {
+		value: l,
+		children: u
+	}), t[13] = l, t[14] = u, t[15] = d) : d = t[15], d;
 }
 Pe.Field = Ne;
 // src/components/label/Label.tsx

@@ -8,12 +8,14 @@ import { View } from "..";
 function noop() { }
 
 type FormContext = {
-  fields: { [name: string]: FieldValue },
+  fields: Record<string, FieldValue>,
+  placeholders?: Record<string, string>,
   onFieldChange: (name: string, value: FieldValue) => void,
 };
 
 const FormContext = createContext<FormContext>({
   fields: {},
+  placeholders: {},
   onFieldChange: () => undefined
 });
 
@@ -28,10 +30,11 @@ function FormField({
   name: string,
   children: React.ReactElement<{
     value: FieldValue,
+    placeholder: string,
     onValueChange: (value: FieldValue) => void,
   }>,
 }) {
-  const { fields, onFieldChange } = useContext(FormContext);
+  const { fields, placeholders, onFieldChange } = useContext(FormContext);
 
   const handleValueChange = (value: FieldValue) => {
     onFieldChange(name, value);
@@ -42,6 +45,7 @@ function FormField({
   return (
     React.isValidElement(onlyChild) && React.cloneElement(onlyChild, {
       value: fields[name],
+      placeholder: placeholders?.[name],
       onValueChange: handleValueChange
     })
   );
@@ -67,14 +71,17 @@ FormField.withComponent = <TProps extends object>(Component: React.ComponentType
 function Form({
   fields,
   children,
+  placeholders,
   onFieldChange = noop,
   ...props
 }: Delegate<{
   fields: Record<string, FieldValue>,
+  placeholders?: Record<string, string>,
   onFieldChange?: (name: string, value: FieldValue) => void,
 }, typeof View<"form">>) {
   const formContextValue = {
     fields,
+    placeholders,
     onFieldChange
   };
 

@@ -6,10 +6,12 @@ declare function FormField({ name, children }: {
     name: string;
     children: React.ReactElement<{
         value: FieldValue;
+        placeholder: string;
         onValueChange: (value: FieldValue) => void;
     }>;
 }): false | React.ReactElement<{
     value: FieldValue;
+    placeholder: string;
     onValueChange: (value: FieldValue) => void;
 }, string | React.JSXElementConstructor<any>>;
 declare namespace FormField {
@@ -17,8 +19,9 @@ declare namespace FormField {
         name: string;
     } & TProps) => React.JSX.Element;
 }
-declare function Form({ fields, children, onFieldChange, ...props }: Delegate<{
+declare function Form({ fields, children, placeholders, onFieldChange, ...props }: Delegate<{
     fields: Record<string, FieldValue>;
+    placeholders?: Record<string, string>;
     onFieldChange?: (name: string, value: FieldValue) => void;
 }, typeof View<"form">>): React.JSX.Element;
 declare namespace Form {
