@@ -1783,7 +1783,7 @@ function Ne(e) {
 		let e = t.Children.only(i);
 		d = t.isValidElement(e) && t.cloneElement(e, {
 			value: o[r],
-			placeholder: s?.[r],
+			placeholder: s?.[r] ?? e.props.placeholder,
 			onValueChange: u
 		}), n[3] = i, n[4] = o, n[5] = u, n[6] = r, n[7] = s, n[8] = d;
 	} else d = n[8];
