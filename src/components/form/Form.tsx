@@ -45,7 +45,7 @@ function FormField({
   return (
     React.isValidElement(onlyChild) && React.cloneElement(onlyChild, {
       value: fields[name],
-      placeholder: placeholders?.[name],
+      placeholder: placeholders?.[name] ?? onlyChild.props.placeholder,
       onValueChange: handleValueChange
     })
   );
