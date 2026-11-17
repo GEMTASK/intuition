@@ -1454,16 +1454,16 @@ function be(e, n) {
 	return t.isValidElement(e) && e;
 }
 // src/components/popover/Popover.tsx
-function xe({ ref: e, content: n, isVisible: r, anchor: i = "bottom left", offsetTop: a = 0, noPortal: o, children: u }) {
-	let f = l(null), p = l(null);
-	s(e, () => f.current), c(() => {
-		let e = f.current?.closest("#window")?.querySelector("#overlay");
-		if (o && r && f.current && p.current) {
-			let t = f.current.getBoundingClientRect(), n = p.current.getBoundingClientRect(), r = e.getBoundingClientRect();
-			i === "top right" ? (p.current.style.left = `${t.width}px`, p.current.style.top = `${t.top - n.top}px`) : (p.current.style.left = `${t.left + 0 - r.left}px`, p.current.style.top = `${t.bottom + 0 - r.top}px`);
-		} else if (r && f.current && p.current) {
-			let t = f.current.getBoundingClientRect(), n = p.current.getBoundingClientRect(), r = e.getBoundingClientRect();
-			i === "top right" ? (p.current.style.left = `${t.right - r.left}px`, p.current.style.top = `${t.top - 8 - r.top + a}px`) : i === "bottom right" ? (p.current.style.left = `${t.right - n.width}px`, p.current.style.top = `${t.top + t.height + a}px`) : i === "bottom left" && (p.current.style.left = `${t.left + 0 - r.left}px`, p.current.style.top = `${t.bottom + 0 - r.top + a}px`);
+function xe({ ref: e, content: n, isVisible: r, anchor: i = "bottom left", offsetTop: a = 0, noPortal: o, children: u, style: f, ...p }) {
+	let m = l(null), h = l(null);
+	s(e, () => m.current), c(() => {
+		let e = m.current?.closest("#window")?.querySelector("#overlay");
+		if (o && r && m.current && h.current) {
+			let t = m.current.getBoundingClientRect(), n = h.current.getBoundingClientRect(), r = e.getBoundingClientRect();
+			i === "top right" ? (h.current.style.left = `${t.width}px`, h.current.style.top = `${t.top - n.top}px`) : (h.current.style.left = `${t.left + 0 - r.left}px`, h.current.style.top = `${t.bottom + 0 - r.top}px`);
+		} else if (r && m.current && h.current) {
+			let t = m.current.getBoundingClientRect(), n = h.current.getBoundingClientRect(), r = e.getBoundingClientRect();
+			i === "top right" ? (h.current.style.left = `${t.right - r.left}px`, h.current.style.top = `${t.top - 8 - r.top + a}px`) : i === "bottom right" ? (h.current.style.left = `${t.right - n.width}px`, h.current.style.top = `${t.top + t.height + a}px`) : i === "bottom left" && (h.current.style.left = `${t.left + 0 - r.left}px`, h.current.style.top = `${t.bottom + 0 - r.top + a}px`);
 		}
 	}, [
 		i,
@@ -1471,22 +1471,26 @@ function xe({ ref: e, content: n, isVisible: r, anchor: i = "bottom left", offse
 		o,
 		a
 	]);
-	let m = f.current?.closest("#window")?.querySelector("#overlay"), h = t.Children.only(u), g = /* @__PURE__ */ (0, B.jsx)(V, {
-		ref: p,
+	let g = m.current?.closest("#window")?.querySelector("#overlay"), _ = t.Children.only(u), v = /* @__PURE__ */ (0, B.jsx)(V, {
+		ref: h,
 		absolute: !0,
 		shadow: !0,
 		fillColor: "content",
 		cornerRadius: "4px",
-		style: { pointerEvents: "auto" },
+		style: {
+			pointerEvents: "auto",
+			...f
+		},
+		...p,
 		children: n
 	});
 	return /* @__PURE__ */ (0, B.jsxs)(B.Fragment, { children: [
-		t.isValidElement(h) && t.cloneElement(h, {
-			ref: f,
+		t.isValidElement(_) && t.cloneElement(_, {
+			ref: m,
 			opacityOnPress: !0
 		}),
-		o && r && m && g,
-		!o && r && m && d(g, m)
+		o && r && g && v,
+		!o && r && g && d(v, g)
 	] });
 }
 // src/components/menu/Menu.tsx

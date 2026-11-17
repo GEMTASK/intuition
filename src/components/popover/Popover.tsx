@@ -13,7 +13,9 @@ function Popover({
   anchor = "bottom left",
   offsetTop = 0,
   noPortal,
-  children
+  children,
+  style,
+  ...props
 }: Delegate<{
   content: React.ReactNode,
   isVisible: boolean,
@@ -73,7 +75,8 @@ function Popover({
       shadow
       fillColor="content"
       cornerRadius="4px"
-      style={{ pointerEvents: "auto" }}
+      style={{ pointerEvents: "auto", ...style }}
+      {...props}
     >
       {content}
     </View>
